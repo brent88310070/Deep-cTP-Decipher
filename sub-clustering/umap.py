@@ -10,9 +10,7 @@ import numpy as np
 from tqdm import tqdm
 import os
 
-# ==========================================
-# Configuration
-# ==========================================
+# --- Global config ---
 INPUT_CSV = "./consensus_labels.csv"
 MODEL_NAME = "facebook/esm2_t6_8M_UR50D"
 SEQ_LENGTH = 70

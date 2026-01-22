@@ -26,7 +26,7 @@ OUTPUT_CSV = "./consensus_labels.csv" # Clustering result file
 MODEL_NAME = "facebook/esm2_t6_8M_UR50D" # PLM model name
 SILHOUETTE_PLOT_FILENAME = "result_fig/consensus_silhouette.png"
 HEATMAP_PLOT_FILENAME = "result_fig/consensus_heatmap.png"
-
+FIXED_N_CLUSTERS = None
 
 # Setup logging and warnings
 warnings.filterwarnings("ignore", message="Graph is not fully connected")
@@ -410,8 +410,20 @@ if __name__ == "__main__":
     plt.close()
 
     # Plot Consensus Heatmap
-    # Set the number of clusters for final visualization (example: 8)
-    N_CLUSTERS = 8 
+    if FIXED_N_CLUSTERS is not None:
+        N_CLUSTERS = int(FIXED_N_CLUSTERS)
+        print(f"Using manually specified N_CLUSTERS: {N_CLUSTERS}")
+    else:
+        valid_scores = {k: v for k, v in sil_scores.items() if not np.isnan(v)}
+        
+        if valid_scores:
+            best_k = max(valid_scores, key=valid_scores.get)
+            best_score = valid_scores[best_k]
+            N_CLUSTERS = best_k
+            print(f"Automatically selected optimal N_CLUSTERS: {N_CLUSTERS} (Score: {best_score:.3f})")
+        else:
+            print("Warning: No valid silhouette scores found. Defaulting to 5 clusters.")
+            N_CLUSTERS = 5
     print(f"Plotting consensus heatmap with {N_CLUSTERS} clusters...")
     
     # Need to import seaborn here if not already imported at top

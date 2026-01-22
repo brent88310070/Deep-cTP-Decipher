@@ -13,7 +13,7 @@ import logomaker
 # --- Global config (must be consistent with train_val.py) ---
 BATCH_SIZE = 64
 SEQ_LEN = 70
-NUM_CLASSES = 5
+NUM_CLASSES = 5 # Based on your cluster num.
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 IG_FOLDER = "./ig_reports"
 PLOT_FOLDER = "./ig_plots"

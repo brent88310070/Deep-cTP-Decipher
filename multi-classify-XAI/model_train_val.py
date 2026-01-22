@@ -14,7 +14,7 @@ import copy
 
 # --- Global config ---
 DATA_PATH = "./consensus_labels_core.csv" 
-NUM_CLASSES = 5
+NUM_CLASSES = 5 # Based on your cluster num.
 SEQ_LEN = 70
 BATCH_SIZE = 64
 LEARNING_RATE = 0.001

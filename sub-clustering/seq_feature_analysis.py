@@ -8,13 +8,11 @@ from sparrow.predictors import batch_predict
 from scipy.stats import mannwhitneyu
 import os
 
-# ==========================================
-# Configuration
-# ==========================================
+# --- Global config ---
 INPUT_CSV = "./consensus_labels.csv"
 ALL_SPECIES_CSV = "./all_species_data.csv" # Your seq data
 MAX_LEN = 100
-WINDOW_SIZE = 8
+WINDOW_SIZE = 8 # Smoothing window size
 OUTPUT_DIR = "./seq_feature_fig/"  # Directory to save plots
 
 # ==========================================

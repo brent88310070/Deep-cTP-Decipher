@@ -6,12 +6,10 @@ import seaborn as sns
 from collections import Counter
 import os
 
-# ==========================================
-# Configuration & Constants
-# ==========================================
+# --- Global config ---
 INPUT_CSV = "./consensus_labels.csv"
 SEQ_LENGTH = 100
-WINDOW_SIZE = 8
+WINDOW_SIZE = 8 # Smoothing window for better visualization
 OUTPUT = "./result_fig"
 
 # Amino acid order and categories
