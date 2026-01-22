@@ -18,7 +18,7 @@ cd Deep-cTP-Decipher
 ```
 
 ## Start
-### **Part 1: Binary classification & XAI**
+### **🌱Part 1: Binary classification & XAI**
 ### Train a Binary classification CNN model based on your peptide seq data:
 ```Python
 # Binary classification
@@ -40,7 +40,7 @@ python -u binary-classify-XAI/model_interpretability.py
 ---
 
 
-### **Part 2: Sub-clustering**
+### **🌱Part 2: Sub-clustering**
 ### Seq sub-clustering using Multi-scale Weighted Consensus Clustering
 ```Python
 # Multi-scale Weighted Consensus Clustering
@@ -82,7 +82,7 @@ python -u sub-clustering/seq_feature_analysis.py
 * **Note**: There are two kinds of plots: `Box plot` for global features & `Curve profile` for local features.
 > **Script output**: You will get a series of predicted pictures in folder `seq_feature_fig`.
 
-### **Part 3: Multi-classification & XAI**
+### **🌱Part 3: Multi-classification & XAI**
 ### Filter sample to extract core samples
 ```Python
 # Extract core samples
